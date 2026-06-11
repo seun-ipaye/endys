@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
@@ -14,20 +15,12 @@ function Hero() {
           your style.
         </p>
         <div className="hero-actions">
-          <a href="#products" className="btn btn-primary">
+          <Link to="/products" className="btn btn-primary">
             View Products
-          </a>
-          <a href="#contact" className="btn btn-outline">
+          </Link>
+          <Link to="/#contact" className="btn btn-outline">
             Contact Us
-          </a>
-          <a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-whatsapp"
-          >
-            Chat on WhatsApp
-          </a>
+          </Link>
         </div>
       </div>
 

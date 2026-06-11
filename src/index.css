@@ -1,8 +1,8 @@
 /* ===== Design tokens ===== */
 :root {
-  /* African-inspired earth tone palette */
-  --color-cream: #fbf3e7;
-  --color-cream-alt: #f4e3cb;
+  /* African-inspired earth tone palette on a white base */
+  --color-cream: #ffffff;
+  --color-cream-alt: #f7f1e8;
   --color-rust: #c1440e;
   --color-rust-dark: #9a350a;
   --color-brown: #2e1a12;

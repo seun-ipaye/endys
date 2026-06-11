@@ -39,7 +39,7 @@ function Contact() {
                 <span className="contact-icon" aria-hidden="true">📍</span>
                 <div>
                   <h3>Address</h3>
-                  <p>1234 Wyandotte St E, Windsor, ON N9A 3H4, Canada</p>
+                  <p>1311 Tecumseh Rd E, Windsor, ON N8W 1B9, Canada</p>
                 </div>
               </li>
               <li>
@@ -47,7 +47,7 @@ function Contact() {
                 <div>
                   <h3>Phone</h3>
                   <p>
-                    <a href="tel:+15191234567">(519) 123-4567</a>
+                    <a href="tel:+15199154094">(519) 915-4094</a>
                   </p>
                 </div>
               </li>
@@ -64,19 +64,10 @@ function Contact() {
               </li>
             </ul>
 
-            <a
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-whatsapp contact-whatsapp"
-            >
-              💬 Chat with us on WhatsApp
-            </a>
-
             <div className="contact-map">
               <iframe
                 title="Endy's African Store location in Windsor, Ontario"
-                src="https://maps.google.com/maps?q=Windsor%2C%20Ontario%2C%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=1311%20Tecumseh%20Rd%20E%2C%20Windsor%2C%20ON%20N8W%201B9%2C%20Canada&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen

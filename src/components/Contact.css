@@ -45,12 +45,6 @@
   color: var(--color-rust);
 }
 
-.contact-whatsapp {
-  width: 100%;
-  font-size: 1rem;
-  padding: 16px 28px;
-}
-
 .contact-map {
   border-radius: var(--radius);
   overflow: hidden;

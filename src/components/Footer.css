@@ -57,17 +57,6 @@
   color: var(--color-gold);
 }
 
-.footer-whatsapp {
-  display: inline-block;
-  margin-top: 8px;
-  font-weight: 600;
-  color: var(--color-whatsapp);
-}
-
-.footer-whatsapp:hover {
-  color: #4be38a;
-}
-
 .footer-bottom {
   border-top: 1px solid rgba(251, 243, 231, 0.1);
   text-align: center;

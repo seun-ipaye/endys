@@ -1,23 +1,24 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Intro from './components/Intro'
-import Products from './components/Products'
-import About from './components/About'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import ScrollManager from './components/ScrollManager'
+import Home from './pages/Home'
+import ProductsPage from './pages/ProductsPage'
+import AboutPage from './pages/AboutPage'
 import './App.css'
 
 function App() {
   return (
     <>
+      <ScrollManager />
       <Navbar />
       <main>
-        <Hero />
-        <Intro />
-        <Products />
-        <About />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </main>
       <Footer />
       <WhatsAppButton />

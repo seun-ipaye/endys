@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Basket of African groceries, spices and grains">
+  <defs>
+    <linearGradient id="grocBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbeed9"/>
+      <stop offset="100%" stop-color="#f1d6ad"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#grocBg)"/>
+
+  <!-- basket -->
+  <path d="M90 190 L310 190 L290 270 C290 280 280 285 270 285 L130 285 C120 285 110 280 110 270 Z" fill="#a9763f"/>
+  <g stroke="#8a5d2c" stroke-width="3" opacity="0.6">
+    <path d="M100 205 L300 205"/>
+    <path d="M104 225 L296 225"/>
+    <path d="M108 245 L292 245"/>
+    <path d="M112 265 L288 265"/>
+  </g>
+  <path d="M130 190 C130 160 270 160 270 190" fill="none" stroke="#8a5d2c" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- sack of grain -->
+  <path d="M150 195 C140 150 160 110 195 110 C230 110 250 150 240 195 Z" fill="#e3a857"/>
+  <rect x="183" y="98" width="24" height="18" rx="4" fill="#c9842f"/>
+
+  <!-- spice jars -->
+  <rect x="245" y="140" width="36" height="55" rx="6" fill="#c1440e"/>
+  <rect x="251" y="128" width="24" height="14" rx="3" fill="#5a3b2a"/>
+  <rect x="100" y="150" width="34" height="48" rx="6" fill="#7a8c4a"/>
+  <rect x="106" y="138" width="22" height="14" rx="3" fill="#5a3b2a"/>
+
+  <!-- peppers -->
+  <circle cx="225" cy="170" r="16" fill="#c1440e"/>
+  <circle cx="248" cy="190" r="12" fill="#9a350a"/>
+  <path d="M222 156 q4 -10 12 -8" stroke="#5a7a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- decorative dots -->
+  <circle cx="340" cy="60" r="18" fill="#c1440e" opacity="0.12"/>
+  <circle cx="50" cy="240" r="22" fill="#8a5a3c" opacity="0.1"/>
+</svg>

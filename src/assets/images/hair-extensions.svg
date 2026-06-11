@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bundles of hair extensions and a wig stand">
+  <defs>
+    <linearGradient id="hairBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4e6d8"/>
+      <stop offset="100%" stop-color="#e6cdb8"/>
+    </linearGradient>
+    <linearGradient id="hairDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a3b2a"/>
+      <stop offset="100%" stop-color="#2e1a12"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#hairBg)"/>
+
+  <!-- stand base -->
+  <rect x="170" y="250" width="60" height="14" rx="6" fill="#a9763f"/>
+  <rect x="192" y="200" width="16" height="55" fill="#c9a06a"/>
+
+  <!-- head form -->
+  <ellipse cx="200" cy="180" rx="42" ry="48" fill="#f1ddc3"/>
+
+  <!-- hair bundle on head -->
+  <path d="M158 150 C150 100 250 100 242 150 C260 190 230 240 200 245 C170 240 140 190 158 150 Z" fill="url(#hairDark)"/>
+  <path d="M165 160 C175 210 185 235 200 240" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M200 158 C205 210 205 235 200 242" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M235 160 C228 210 218 235 205 240" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+
+  <!-- extra hair bundles beside stand -->
+  <path d="M70 260 C60 180 130 170 125 250 C125 270 80 280 70 260 Z" fill="url(#hairDark)"/>
+  <path d="M85 200 C90 230 95 250 100 262" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M105 198 C108 228 110 250 110 264" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+  <rect x="68" y="178" width="60" height="16" rx="8" fill="#e3a857"/>
+
+  <path d="M330 260 C320 190 290 180 285 250 C283 272 320 280 330 260 Z" fill="url(#hairDark)"/>
+  <path d="M298 205 C296 230 296 250 300 264" stroke="#7a5436" stroke-width="4" fill="none" opacity="0.6"/>
+  <rect x="282" y="186" width="50" height="14" rx="7" fill="#c1440e"/>
+
+  <!-- decorative dots -->
+  <circle cx="340" cy="60" r="16" fill="#c1440e" opacity="0.12"/>
+  <circle cx="55" cy="55" r="22" fill="#e3a857" opacity="0.18"/>
+</svg>

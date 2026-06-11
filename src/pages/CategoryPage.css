@@ -4,16 +4,19 @@
   text-align: center;
 }
 
-/* Placeholder banner image - swap for real product photography */
+/* Illustrated placeholder banner - swap for real product photography */
 .category-banner {
-  height: 220px;
+  height: 280px;
   border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4.5rem;
+  overflow: hidden;
   box-shadow: var(--shadow);
   margin-bottom: 32px;
+}
+
+.category-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .category-long-description {

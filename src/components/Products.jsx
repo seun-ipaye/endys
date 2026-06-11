@@ -14,7 +14,7 @@ function Products() {
               key={category.slug}
             >
               <div className={`product-image ${category.className}`}>
-                <span aria-hidden="true">{category.icon}</span>
+                <img src={category.image} alt="" loading="lazy" />
               </div>
               <div className="product-body">
                 <h3>{category.title}</h3>

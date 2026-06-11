@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Fresh cuts of meat on a wooden board">
+  <defs>
+    <linearGradient id="meatBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1ddc3"/>
+      <stop offset="100%" stop-color="#e8c9a3"/>
+    </linearGradient>
+    <linearGradient id="meatRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97a4a"/>
+      <stop offset="100%" stop-color="#a8330f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#meatBg)"/>
+
+  <!-- wooden board -->
+  <rect x="40" y="170" width="320" height="90" rx="16" fill="#8a5a3c"/>
+  <rect x="40" y="170" width="320" height="14" rx="7" fill="#a06f4d"/>
+
+  <!-- main cut of meat -->
+  <path d="M120 195 C100 150 180 100 230 110 C300 125 300 190 250 205 C200 222 140 230 120 195 Z" fill="url(#meatRed)"/>
+  <!-- fat marbling -->
+  <path d="M150 150 C170 165 190 150 210 165" stroke="#fbe6d6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M160 180 C185 195 215 180 235 192" stroke="#fbe6d6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M140 165 C150 178 165 178 175 192" stroke="#fbe6d6" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- bone -->
+  <path d="M255 130 C270 120 290 120 300 135 C310 148 305 165 290 170 L260 195 C250 185 248 160 255 130 Z" fill="#f8efe2"/>
+  <circle cx="268" cy="132" r="9" fill="#f8efe2"/>
+  <circle cx="295" cy="145" r="9" fill="#f8efe2"/>
+
+  <!-- knife -->
+  <rect x="60" y="225" width="120" height="14" rx="7" fill="#5a3b2a" transform="rotate(-6 60 225)"/>
+  <path d="M170 205 L260 218 L172 232 Z" fill="#d6dde2" transform="rotate(-6 170 205)"/>
+
+  <!-- decorative herbs -->
+  <circle cx="330" cy="60" r="14" fill="#9a350a" opacity="0.15"/>
+  <circle cx="60" cy="50" r="20" fill="#c1440e" opacity="0.12"/>
+</svg>

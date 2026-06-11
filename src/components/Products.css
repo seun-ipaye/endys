@@ -18,25 +18,16 @@
   box-shadow: 0 18px 40px rgba(46, 26, 18, 0.16);
 }
 
-/* Placeholder images - swap these for real product photography */
+/* Illustrated placeholder images - swap these for real product photography */
 .product-image {
   height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
+  overflow: hidden;
 }
 
-.card-meat {
-  background: linear-gradient(135deg, #d97a4a, var(--color-rust));
-}
-
-.card-food {
-  background: linear-gradient(135deg, var(--color-gold), #c9842f);
-}
-
-.card-hair {
-  background: linear-gradient(135deg, #8a5a44, var(--color-brown-soft));
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-body {

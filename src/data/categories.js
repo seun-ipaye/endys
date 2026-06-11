@@ -1,10 +1,15 @@
 // Shared product category data, used by the products overview page,
 // the navbar dropdown, and each category's detail page.
+import meatImage from '../assets/images/meat.svg'
+import groceriesImage from '../assets/images/groceries.svg'
+import hairExtensionsImage from '../assets/images/hair-extensions.svg'
+
 export const CATEGORIES = [
   {
     slug: 'meat',
     icon: '🥩',
     title: 'Meat',
+    image: meatImage,
     className: 'card-meat',
     shortDescription:
       'Halal goat, beef, chicken, turkey & oxtail, freshly cut and packed to order - perfect for stews, suya & jollof.',
@@ -21,6 +26,7 @@ export const CATEGORIES = [
     slug: 'groceries',
     icon: '🍲',
     title: 'African Groceries',
+    image: groceriesImage,
     className: 'card-food',
     shortDescription:
       'Rice, gari, fufu, plantain flour, palm oil, dried fish, spices & seasonings to stock a true African pantry.',
@@ -37,6 +43,7 @@ export const CATEGORIES = [
     slug: 'hair-extensions',
     icon: '💁🏾‍♀️',
     title: 'Hair Extensions',
+    image: hairExtensionsImage,
     className: 'card-hair',
     shortDescription:
       'Braiding hair, weaves, wigs & accessories from trusted brands - quality extensions for every look.',

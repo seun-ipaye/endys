@@ -21,8 +21,8 @@ function CategoryPage() {
 
       <section className="section category-page">
         <div className="container category-page-inner">
-          <div className={`category-banner ${category.className}`} aria-hidden="true">
-            <span>{category.icon}</span>
+          <div className={`category-banner ${category.className}`}>
+            <img src={category.image} alt={`${category.title} at Endy's African Store`} />
           </div>
 
           <p className="category-long-description">{category.longDescription}</p>

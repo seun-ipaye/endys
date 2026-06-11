@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { CATEGORIES } from '../data/categories'
 import './Navbar.css'
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Our Products', to: '/products' },
+  {
+    label: 'Our Products',
+    to: '/products',
+    children: CATEGORIES.map((category) => ({
+      label: category.title,
+      to: `/products/${category.slug}`,
+    })),
+  },
   { label: 'About Us', to: '/about' },
   { label: 'Contact', to: '/#contact' },
 ]
@@ -34,14 +42,46 @@ function Navbar() {
           aria-label="Main navigation"
         >
           <ul>
-            {NAV_LINKS.map((link) =>
-              link.to.startsWith('/#') ? (
-                <li key={link.to}>
-                  <Link to={link.to} onClick={closeMenu}>
-                    {link.label}
-                  </Link>
-                </li>
-              ) : (
+            {NAV_LINKS.map((link) => {
+              if (link.to.startsWith('/#')) {
+                return (
+                  <li key={link.to}>
+                    <Link to={link.to} onClick={closeMenu}>
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              }
+
+              if (link.children) {
+                return (
+                  <li key={link.to} className="navbar-dropdown">
+                    <NavLink
+                      to={link.to}
+                      onClick={closeMenu}
+                      className={({ isActive }) => (isActive ? 'active' : '')}
+                      end
+                    >
+                      {link.label}
+                    </NavLink>
+                    <ul className="navbar-submenu">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <NavLink
+                            to={child.to}
+                            onClick={closeMenu}
+                            className={({ isActive }) => (isActive ? 'active' : '')}
+                          >
+                            {child.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                )
+              }
+
+              return (
                 <li key={link.to}>
                   <NavLink
                     to={link.to}
@@ -53,7 +93,7 @@ function Navbar() {
                   </NavLink>
                 </li>
               )
-            )}
+            })}
           </ul>
         </nav>
 

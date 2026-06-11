@@ -5,6 +5,7 @@ import WhatsAppButton from './components/WhatsAppButton'
 import ScrollManager from './components/ScrollManager'
 import Home from './pages/Home'
 import ProductsPage from './pages/ProductsPage'
+import CategoryPage from './pages/CategoryPage'
 import AboutPage from './pages/AboutPage'
 import './App.css'
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:slug" element={<CategoryPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </main>

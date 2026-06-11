@@ -5,6 +5,7 @@
 }
 
 .product-card {
+  display: block;
   background: var(--color-white);
   border-radius: var(--radius);
   overflow: hidden;

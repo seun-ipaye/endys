@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Intro.css'
 
 const HIGHLIGHTS = [
@@ -37,13 +38,13 @@ function Intro() {
 
         <div className="intro-highlights">
           {HIGHLIGHTS.map((item) => (
-            <a href="#products" className="highlight-card" key={item.title}>
+            <Link to="/products" className="highlight-card" key={item.title}>
               <span className="highlight-icon" aria-hidden="true">
                 {item.icon}
               </span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

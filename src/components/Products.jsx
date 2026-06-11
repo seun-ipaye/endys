@@ -26,17 +26,8 @@ const CATEGORIES = [
 
 function Products() {
   return (
-    <section id="products" className="products section section-alt">
+    <section id="products" className="products section">
       <div className="container">
-        <div className="section-header">
-          <p className="section-tag">Our Products</p>
-          <h2 className="section-title">Shop By Category</h2>
-          <p className="section-subtitle">
-            Browse our most popular categories. Visit us in-store for our
-            full range of products and weekly fresh arrivals.
-          </p>
-        </div>
-
         <div className="product-grid">
           {CATEGORIES.map((category) => (
             <article className="product-card" key={category.title}>

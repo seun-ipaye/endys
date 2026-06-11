@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Our Products', href: '#products' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Our Products', to: '/products' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Contact', to: '/#contact' },
 ]
 
 function Navbar() {
@@ -24,32 +25,36 @@ function Navbar() {
   return (
     <header className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#home" className="navbar-logo" onClick={closeMenu}>
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           Endy's <span>African Store</span>
-        </a>
+        </Link>
 
         <nav
           className={`navbar-links ${isMenuOpen ? 'navbar-links-open' : ''}`}
           aria-label="Main navigation"
         >
           <ul>
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} onClick={closeMenu}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.to.startsWith('/#') ? (
+                <li key={link.to}>
+                  <Link to={link.to} onClick={closeMenu}>
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    onClick={closeMenu}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                    end
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              )
+            )}
           </ul>
-          <a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-whatsapp navbar-whatsapp"
-            onClick={closeMenu}
-          >
-            Chat on WhatsApp
-          </a>
         </nav>
 
         <button

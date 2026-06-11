@@ -9,8 +9,6 @@ function About() {
         </div>
 
         <div className="about-content">
-          <p className="section-tag">About Us</p>
-          <h2 className="section-title">Rooted in Culture, Built for Community</h2>
           <p>
             Endy's African Store was founded with a simple goal: to make sure
             no one in Windsor has to travel far for a taste of home. What

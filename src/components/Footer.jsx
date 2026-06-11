@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const QUICK_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Our Products', href: '#products' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Our Products', to: '/products' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Contact', to: '/#contact' },
 ]
 
 function Footer() {
@@ -27,8 +28,8 @@ function Footer() {
           <h4>Quick Links</h4>
           <ul>
             {QUICK_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+              <li key={link.to}>
+                <Link to={link.to}>{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -36,23 +37,15 @@ function Footer() {
 
         <div className="footer-contact">
           <h4>Contact</h4>
-          <p>1234 Wyandotte St E, Windsor, ON N9A 3H4, Canada</p>
+          <p>1311 Tecumseh Rd E, Windsor, ON N8W 1B9, Canada</p>
           <p>
-            <a href="tel:+15191234567">(519) 123-4567</a>
+            <a href="tel:+15199154094">(519) 915-4094</a>
           </p>
           <p>
             <a href="mailto:info@endysafricanstore.ca">
               info@endysafricanstore.ca
             </a>
           </p>
-          <a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-whatsapp"
-          >
-            Chat on WhatsApp
-          </a>
         </div>
       </div>
 

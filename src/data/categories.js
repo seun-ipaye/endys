@@ -1,62 +1,92 @@
 // Shared product category data, used by the products overview page,
 // the navbar dropdown, and each category's detail page.
-import meatImage from '../assets/images/meat.svg'
-import groceriesImage from '../assets/images/groceries.svg'
-import hairExtensionsImage from '../assets/images/hair-extensions.svg'
+import meatImage from "../assets/images/meat.png";
+import groceriesImage from "../assets/images/groceries.jpeg";
+import hairExtensionsImage from "../assets/images/hair-extensions.jpg";
 
 export const CATEGORIES = [
   {
-    slug: 'meat',
-    icon: '🥩',
-    title: 'Meat',
+    slug: "meat",
+    icon: "🥩",
+    title: "Meat",
     image: meatImage,
-    className: 'card-meat',
+    className: "card-meat",
     shortDescription:
-      'Halal goat, beef, chicken, turkey & oxtail, freshly cut and packed to order - perfect for stews, suya & jollof.',
+      "Halal goat, beef, chicken, turkey & oxtail, freshly cut and packed to order - perfect for stews, suya & jollof.",
     longDescription:
       "Our meat counter is stocked daily with halal cuts prepared the way you'd expect from home - goat, beef, chicken, turkey, oxtail and more. Tell us how you like it cut and we'll prepare it fresh while you shop.",
     items: [
-      { name: 'Goat Meat', description: 'Bone-in or boneless, cut to order.' },
-      { name: 'Beef', description: 'Assorted cuts including shank, brisket & stew beef.' },
-      { name: 'Chicken', description: 'Whole, drumsticks, wings & gizzards.' },
-      { name: 'Oxtail & Cow Foot', description: 'Slow-cook favourites for soups & stews.' },
+      { name: "Goat Meat", description: "Bone-in or boneless, cut to order." },
+      {
+        name: "Beef",
+        description: "Assorted cuts including shank, brisket & stew beef.",
+      },
+      { name: "Chicken", description: "Whole, drumsticks, wings & gizzards." },
+      {
+        name: "Oxtail & Cow Foot",
+        description: "Slow-cook favourites for soups & stews.",
+      },
     ],
   },
   {
-    slug: 'groceries',
-    icon: '🍲',
-    title: 'African Groceries',
+    slug: "groceries",
+    icon: "🍲",
+    title: "African Groceries",
     image: groceriesImage,
-    className: 'card-food',
+    className: "card-food",
     shortDescription:
-      'Rice, gari, fufu, plantain flour, palm oil, dried fish, spices & seasonings to stock a true African pantry.',
+      "Rice, gari, fufu, plantain flour, palm oil, dried fish, spices & seasonings to stock a true African pantry.",
     longDescription:
-      'From everyday staples to hard-to-find imports, our shelves are packed with the ingredients that make African cooking taste like home - grains, swallows, oils, spices, snacks and dried goods.',
+      "From everyday staples to hard-to-find imports, our shelves are packed with the ingredients that make African cooking taste like home - grains, swallows, oils, spices, snacks and dried goods.",
     items: [
-      { name: 'Rice & Grains', description: 'Long grain, basmati, ofada & more.' },
-      { name: 'Swallows', description: 'Gari, fufu, semovita, plantain & yam flour.' },
-      { name: 'Oils & Spices', description: 'Palm oil, groundnut oil, seasoning cubes & spice blends.' },
-      { name: 'Dried & Smoked Foods', description: 'Stockfish, dried fish, crayfish & more.' },
+      {
+        name: "Rice & Grains",
+        description: "Long grain, basmati, ofada & more.",
+      },
+      {
+        name: "Swallows",
+        description: "Gari, fufu, semovita, plantain & yam flour.",
+      },
+      {
+        name: "Oils & Spices",
+        description: "Palm oil, groundnut oil, seasoning cubes & spice blends.",
+      },
+      {
+        name: "Dried & Smoked Foods",
+        description: "Stockfish, dried fish, crayfish & more.",
+      },
     ],
   },
   {
-    slug: 'hair-extensions',
-    icon: '💁🏾‍♀️',
-    title: 'Hair Extensions',
+    slug: "hair-extensions",
+    icon: "💁🏾‍♀️",
+    title: "Hair Extensions",
     image: hairExtensionsImage,
-    className: 'card-hair',
+    className: "card-hair",
     shortDescription:
-      'Braiding hair, weaves, wigs & accessories from trusted brands - quality extensions for every look.',
+      "Braiding hair, weaves, wigs & accessories from trusted brands - quality extensions for every look.",
     longDescription:
       "Whether you're braiding, weaving, or wearing a wig, we carry a wide selection of premium hair extensions and accessories from brands you trust - in the textures, lengths and colours you're looking for.",
     items: [
-      { name: 'Braiding Hair', description: 'Kanekalon, Marley, and pre-stretched options.' },
-      { name: 'Wigs', description: 'Lace fronts and full wigs in multiple styles.' },
-      { name: 'Weaves & Bundles', description: 'Human hair & synthetic bundles.' },
-      { name: 'Accessories', description: 'Combs, edge control, hair ties & more.' },
+      {
+        name: "Braiding Hair",
+        description: "Kanekalon, Marley, and pre-stretched options.",
+      },
+      {
+        name: "Wigs",
+        description: "Lace fronts and full wigs in multiple styles.",
+      },
+      {
+        name: "Weaves & Bundles",
+        description: "Human hair & synthetic bundles.",
+      },
+      {
+        name: "Accessories",
+        description: "Combs, edge control, hair ties & more.",
+      },
     ],
   },
-]
+];
 
 export const getCategoryBySlug = (slug) =>
-  CATEGORIES.find((category) => category.slug === slug)
+  CATEGORIES.find((category) => category.slug === slug);

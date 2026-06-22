@@ -3,17 +3,14 @@ import './Intro.css'
 
 const HIGHLIGHTS = [
   {
-    icon: '🥩',
     title: 'Fresh Meat',
     description: 'Halal goat, beef, chicken & specialty cuts, prepared fresh.',
   },
   {
-    icon: '🌶️',
     title: 'African Groceries',
     description: 'Spices, grains, snacks & staples from across the continent.',
   },
   {
-    icon: '💇🏾‍♀️',
     title: 'Hair Extensions',
     description: 'Premium braiding hair, wigs & extensions for every style.',
   },
@@ -39,9 +36,6 @@ function Intro() {
         <div className="intro-highlights">
           {HIGHLIGHTS.map((item) => (
             <Link to="/products" className="highlight-card" key={item.title}>
-              <span className="highlight-icon" aria-hidden="true">
-                {item.icon}
-              </span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </Link>

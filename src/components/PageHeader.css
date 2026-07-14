@@ -1,6 +1,6 @@
 .page-header {
-  padding: 64px 0 16px;
-  background: var(--color-cream-alt);
+  padding: 72px 0 24px;
+  background: #0d0d0d;
   text-align: center;
 }
 
@@ -9,8 +9,17 @@
   margin: 0 auto;
 }
 
+/* Override global heading/text colors for the dark page header */
+.page-header .section-title {
+  color: var(--color-white);
+}
+
+.page-header .section-subtitle {
+  color: rgba(255, 255, 255, 0.65);
+}
+
 @media (max-width: 768px) {
   .page-header {
-    padding: 48px 0 8px;
+    padding: 56px 0 16px;
   }
 }

@@ -1,14 +1,22 @@
 .hero {
   position: relative;
-  padding: 110px 0 90px;
-  background: linear-gradient(
-    160deg,
-    var(--color-cream) 0%,
-    var(--color-cream-alt) 60%,
-    #f1ddc3 100%
-  );
+  padding: 120px 0 100px;
+  background: linear-gradient(160deg, #0d0d0d 0%, #1c1000 60%, #0d0d0d 100%);
   overflow: hidden;
   text-align: center;
+}
+
+/* Subtle orange glow in the background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(232, 149, 10, 0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-inner {
@@ -24,11 +32,12 @@
 .hero-title {
   font-size: clamp(2.2rem, 5.5vw, 3.6rem);
   margin-bottom: 20px;
+  color: var(--color-white);
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.68);
   max-width: 620px;
   margin: 0 auto 36px;
 }
@@ -47,7 +56,7 @@
   right: -120px;
   transform: translateY(-50%);
   z-index: 0;
-  opacity: 0.18;
+  opacity: 0.12;
   pointer-events: none;
 }
 
@@ -55,7 +64,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--color-gold), var(--color-rust));
+  background: radial-gradient(circle at 30% 30%, var(--color-orange-light), var(--color-orange));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +73,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 90px 0 64px;
+    padding: 90px 0 72px;
   }
 
   .hero-graphic {

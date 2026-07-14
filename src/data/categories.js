@@ -1,8 +1,8 @@
 // Shared product category data, used by the products overview page,
 // the navbar dropdown, and each category's detail page.
 import meatImage from "../assets/images/meat.png";
-import groceriesImage from "../assets/images/groceries.jpeg";
-import hairExtensionsImage from "../assets/images/hair-extensions.jpg";
+import groceriesImage from "../assets/images/groceries1.jpeg";
+import hairExtensionsImage from "../assets/images/hair-extensions1.jpg";
 
 export const CATEGORIES = [
   {

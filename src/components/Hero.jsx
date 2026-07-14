@@ -5,28 +5,42 @@ function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero-inner">
-        <p className="section-tag hero-tag">Welcome to Endy's African Store</p>
-        <h1 className="hero-title">
-          Authentic African Groceries, Meats &amp; Hair Care in Windsor, Ontario
-        </h1>
-        <p className="hero-subtitle">
-          From fresh halal cuts and pantry staples to premium hair extensions
-          - everything you need to bring a taste of home to your table and
-          your style.
-        </p>
-        <div className="hero-actions">
-          <Link to="/products" className="btn btn-primary">
-            View Products
-          </Link>
-          <Link to="/#contact" className="btn btn-outline-light">
-            Contact Us
-          </Link>
-        </div>
-      </div>
 
-      {/* Decorative graphic - replace with a real storefront / product photo */}
-      <div className="hero-graphic" aria-hidden="true">
-        <div className="hero-graphic-circle">🛍️</div>
+        {/* Left: copy */}
+        <div className="hero-content">
+          <span className="hero-accent-bar" aria-hidden="true"></span>
+          <p className="section-tag">Windsor's African Supermarket</p>
+          <h1 className="hero-title">
+            Authentic African Groceries, Fresh Meat &amp; Hair Essentials
+          </h1>
+          <p className="hero-subtitle">
+            Your local destination for African pantry staples, halal meats,
+            fresh ingredients and quality hair products in Windsor.
+          </p>
+          <div className="hero-actions">
+            <Link to="/products" className="btn btn-primary">
+              Shop Our Categories
+            </Link>
+            <a
+              href="https://maps.google.com/maps?q=1311+Tecumseh+Rd+E,+Windsor,+ON"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-light"
+            >
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+        {/* Right: store image — drop /hero-image.jpg into public/ */}
+        <div className="hero-image" aria-hidden="true">
+          <img
+            src="/hero-image.jpg"
+            alt="Inside Endy's African Supermarket"
+            className="hero-img"
+          />
+          <div className="hero-image-fallback"></div>
+        </div>
       </div>
     </section>
   )

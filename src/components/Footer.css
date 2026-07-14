@@ -1,68 +1,86 @@
 .footer {
-  background: #0d0d0d;
-  color: rgba(255, 255, 255, 0.75);
+  background: var(--c-black);
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid #1e1e1e;
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 40px;
-  padding: 56px 24px;
+  padding: 56px 24px 48px;
 }
 
-.footer-brand h3 {
-  font-size: 1.4rem;
-  color: var(--color-white);
+/* Logo */
+.footer-logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--c-white);
   margin-bottom: 12px;
 }
 
-.footer-brand h3 span {
-  color: var(--color-orange);
+.footer-logo-text span { color: var(--c-orange); }
+
+.footer-tagline {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 300px;
 }
 
-.footer-brand p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
-  max-width: 320px;
-}
-
-.footer-links h4,
-.footer-contact h4 {
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 1rem;
+/* Headings */
+.footer-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-white);
   margin-bottom: 16px;
 }
 
-.footer-links ul {
+/* Quick links */
+.footer-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .footer-links a,
-.footer-contact a,
-.footer-contact p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.footer-contact p {
-  margin-bottom: 8px;
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  transition: color 0.15s ease;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover {
-  color: var(--color-orange);
+  color: var(--c-orange);
 }
 
+/* Contact list */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact li {
+  font-size: 0.9rem;
+}
+
+/* Bottom bar */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #1e1e1e;
   text-align: center;
-  padding: 20px;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.35);
+  padding: 18px 24px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {

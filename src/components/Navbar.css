@@ -2,105 +2,102 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13, 13, 13, 0.92);
-  backdrop-filter: blur(10px);
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  background: var(--c-black);
+  border-bottom: 1px solid #1e1e1e;
 }
 
+/* Slightly lighter border when scrolled for a subtle separation cue */
 .navbar-scrolled {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  background: rgba(13, 13, 13, 0.98);
+  border-bottom-color: #2a2a2a;
 }
 
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 68px;
 }
 
+/* ===== Logo ===== */
 .navbar-logo {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-white);
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.navbar-logo span {
-  color: var(--color-orange);
+.navbar-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
-.navbar-links {
+/* Fallback text shown when logo image hasn't been added yet */
+.navbar-logo-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-white);
+  letter-spacing: -0.01em;
+}
+
+.navbar-logo-text span {
+  color: var(--c-orange);
+}
+
+/* ===== Nav links ===== */
+.navbar-links ul {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.navbar-links ul {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
 .navbar-links a {
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.15s ease;
   position: relative;
-  padding: 6px 0;
-  transition: color 0.2s ease;
+  padding-bottom: 2px;
 }
 
-.navbar-links ul a::after {
+.navbar-links a::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: var(--color-orange);
-  transition: width 0.25s ease;
+  background: var(--c-orange);
+  transition: width 0.2s ease;
 }
 
-.navbar-links ul a:hover {
-  color: var(--color-orange);
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--c-orange);
 }
 
-.navbar-links ul a:hover::after {
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
   width: 100%;
 }
 
-.navbar-links ul a.active {
-  color: var(--color-orange);
-}
-
-.navbar-links ul a.active::after {
-  width: 100%;
-}
-
-/* ===== Dropdown (Our Products) ===== */
+/* ===== Dropdown ===== */
 .navbar-dropdown {
   position: relative;
 }
 
 .navbar-submenu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 12px);
   left: 0;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  min-width: 210px;
-  background: #1a1a1a;
-  border: 1px solid rgba(232, 149, 10, 0.2);
-  border-radius: 10px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-  padding: 8px;
+  min-width: 200px;
+  background: var(--c-charcoal);
+  border: 1px solid #2e2e2e;
+  border-radius: var(--radius);
+  padding: 6px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
 }
 
 .navbar-dropdown:hover .navbar-submenu,
@@ -110,29 +107,26 @@
   transform: translateY(0);
 }
 
-.navbar-submenu li {
-  width: 100%;
-}
+.navbar-submenu li { width: 100%; }
 
 .navbar-submenu a {
   display: block;
-  width: 100%;
   padding: 10px 14px;
-  border-radius: 6px;
+  border-radius: 4px;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
 }
 
-.navbar-submenu a::after {
-  display: none;
-}
+.navbar-submenu a::after { display: none; }
 
 .navbar-submenu a:hover,
 .navbar-submenu a.active {
-  background: rgba(232, 149, 10, 0.15);
-  color: var(--color-orange);
+  background: rgba(245, 154, 0, 0.12);
+  color: var(--c-orange);
 }
 
+/* ===== Hamburger ===== */
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -148,65 +142,47 @@
   display: block;
   height: 2px;
   width: 100%;
-  background: var(--color-white);
+  background: var(--c-white);
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.22s ease, opacity 0.22s ease;
 }
 
-.navbar-toggle-open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
+.navbar-toggle-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-toggle-open span:nth-child(2) { opacity: 0; }
+.navbar-toggle-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.navbar-toggle-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggle-open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* ===== Mobile menu ===== */
+/* ===== Mobile ===== */
 @media (max-width: 860px) {
-  .navbar-toggle {
-    display: flex;
-  }
+  .navbar-toggle { display: flex; }
 
   .navbar-links {
     position: absolute;
-    top: 76px;
+    top: 68px;
     left: 0;
     right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    background: #0d0d0d;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    background: var(--c-black);
+    border-bottom: 1px solid #2a2a2a;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
 
-  .navbar-links-open {
-    max-height: 480px;
-  }
+  .navbar-links-open { max-height: 500px; }
 
   .navbar-links ul {
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     gap: 0;
-    padding: 12px 24px;
+    padding: 8px 24px 16px;
   }
 
-  .navbar-links ul li {
-    width: 100%;
-  }
+  .navbar-links ul li { width: 100%; }
 
   .navbar-links ul a {
     display: block;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    color: rgba(255, 255, 255, 0.85);
+    padding: 13px 0;
+    border-bottom: 1px solid #1e1e1e;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .navbar-submenu {
@@ -214,21 +190,20 @@
     opacity: 1;
     visibility: visible;
     transform: none;
-    box-shadow: none;
     background: transparent;
     border: none;
-    padding: 0 0 8px 16px;
+    padding: 0 0 6px 16px;
   }
 
   .navbar-submenu a {
-    border-bottom: none;
-    padding: 10px 0;
-    color: rgba(255, 255, 255, 0.55);
+    padding: 9px 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
   }
 
   .navbar-submenu a:hover,
   .navbar-submenu a.active {
     background: transparent;
-    color: var(--color-orange);
+    color: var(--c-orange);
   }
 }

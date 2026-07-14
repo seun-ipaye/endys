@@ -4,23 +4,32 @@ import './Products.css'
 
 function Products() {
   return (
-    <section id="products" className="products section">
+    <section id="products" className="products section section-grey">
       <div className="container">
         <div className="product-grid">
           {CATEGORIES.map((category) => (
-            <Link
-              to={`/products/${category.slug}`}
-              className="product-card"
-              key={category.slug}
-            >
-              <div className={`product-image ${category.className}`}>
-                <img src={category.image} alt="" loading="lazy" />
+            <article className="product-card" key={category.slug}>
+              <div className="product-image">
+                <img src={category.image} alt={category.title} loading="lazy" />
               </div>
               <div className="product-body">
-                <h3>{category.title}</h3>
-                <p>{category.shortDescription}</p>
+                <p className="product-label">{category.title}</p>
+                <p className="product-desc">{category.shortDescription}</p>
+                <div className="product-actions">
+                  <Link to={`/products/${category.slug}`} className="btn btn-primary product-btn">
+                    Explore
+                  </Link>
+                  <a
+                    href="https://wa.me/1234567890"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline product-btn"
+                  >
+                    Ask on WhatsApp
+                  </a>
+                </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </div>

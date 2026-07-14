@@ -8,24 +8,21 @@ const NAV_LINKS = [
   {
     label: 'Our Products',
     to: '/products',
-    children: CATEGORIES.map((category) => ({
-      label: category.title,
-      to: `/products/${category.slug}`,
-    })),
+    children: CATEGORIES.map((c) => ({ label: c.title, to: `/products/${c.slug}` })),
   },
   { label: 'About Us', to: '/about' },
   { label: 'Contact', to: '/#contact' },
 ]
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled]   = useState(false)
+  const [isMenuOpen, setIsMenuOpen]   = useState(false)
+  const [logoError,  setLogoError]    = useState(false)
 
-  // Add a shadow to the nav once the page has been scrolled
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const closeMenu = () => setIsMenuOpen(false)
@@ -33,8 +30,21 @@ function Navbar() {
   return (
     <header className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
+
+        {/* Logo — drop /logo.png into the public/ folder to activate */}
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          Endy's <span>African Store</span>
+          {!logoError ? (
+            <img
+              src="/logo.png"
+              alt="Endy's African Supermarket"
+              className="navbar-logo-img"
+              onError={() => setLogoError(true)}
+            />
+          ) : (
+            <span className="navbar-logo-text">
+              Endy's <span>African Supermarket</span>
+            </span>
+          )}
         </Link>
 
         <nav
@@ -46,21 +56,18 @@ function Navbar() {
               if (link.to.startsWith('/#')) {
                 return (
                   <li key={link.to}>
-                    <Link to={link.to} onClick={closeMenu}>
-                      {link.label}
-                    </Link>
+                    <Link to={link.to} onClick={closeMenu}>{link.label}</Link>
                   </li>
                 )
               }
-
               if (link.children) {
                 return (
                   <li key={link.to} className="navbar-dropdown">
                     <NavLink
                       to={link.to}
+                      end
                       onClick={closeMenu}
                       className={({ isActive }) => (isActive ? 'active' : '')}
-                      end
                     >
                       {link.label}
                     </NavLink>
@@ -80,14 +87,13 @@ function Navbar() {
                   </li>
                 )
               }
-
               return (
                 <li key={link.to}>
                   <NavLink
                     to={link.to}
+                    end
                     onClick={closeMenu}
                     className={({ isActive }) => (isActive ? 'active' : '')}
-                    end
                   >
                     {link.label}
                   </NavLink>
@@ -101,11 +107,9 @@ function Navbar() {
           className={`navbar-toggle ${isMenuOpen ? 'navbar-toggle-open' : ''}`}
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen((open) => !open)}
+          onClick={() => setIsMenuOpen((o) => !o)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span /><span /><span />
         </button>
       </div>
     </header>

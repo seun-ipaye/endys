@@ -1,37 +1,45 @@
 /* ===== Design tokens ===== */
 :root {
-  /* Orange & black brand palette */
-  --color-cream: #fff8ee;        /* warm light background */
-  --color-cream-alt: #f0e8d8;    /* slightly deeper light bg for alt sections */
-  --color-orange: #e8950a;       /* primary orange (logo-matched) */
-  --color-orange-dark: #c47a04;  /* deeper orange for hover states */
-  --color-orange-light: #f5a623; /* brighter orange for accents/logo */
-  --color-dark: #0d0d0d;         /* near-black */
-  --color-dark-soft: #1a1a1a;    /* card bg on dark surfaces */
-  --color-text: #1a1a1a;
-  --color-text-light: #5c5c5c;
-  --color-white: #ffffff;
-  --color-whatsapp: #25d366;
-  --color-whatsapp-dark: #1ebe5d;
+  --c-black:        #080808;
+  --c-charcoal:     #181818;
+  --c-orange:       #F59A00;
+  --c-orange-hover: #FFAA00;
+  --c-white:        #FFFFFF;
+  --c-grey-bg:      #F3F3F3;
+  --c-grey-text:    #737373;
+  --c-grey-border:  #D9D9D9;
 
-  /* Aliases — used by older component CSS via these names */
-  --color-rust: var(--color-orange);
-  --color-rust-dark: var(--color-orange-dark);
-  --color-brown: var(--color-dark);
-  --color-brown-soft: var(--color-dark-soft);
-  --color-gold: var(--color-orange-light);
+  /* Legacy aliases — keeps older component CSS working */
+  --color-rust:        var(--c-orange);
+  --color-rust-dark:   var(--c-orange-hover);
+  --color-brown:       var(--c-black);
+  --color-brown-soft:  var(--c-charcoal);
+  --color-gold:        var(--c-orange);
+  --color-cream:       var(--c-white);
+  --color-cream-alt:   var(--c-grey-bg);
+  --color-dark:        var(--c-black);
+  --color-dark-soft:   var(--c-charcoal);
+  --color-orange:      var(--c-orange);
+  --color-text:        var(--c-black);
+  --color-text-light:  var(--c-grey-text);
+  --color-white:       var(--c-white);
+  --color-whatsapp:      #25D366;
+  --color-whatsapp-dark: #1EBE5D;
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-body:    'Inter', system-ui, 'Segoe UI', sans-serif;
+  --font-heading: 'Inter', system-ui, 'Segoe UI', sans-serif;
 
   --max-width: 1180px;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --shadow-orange: 0 8px 20px rgba(232, 149, 10, 0.35);
+  --radius:    6px;
+
+  /* No box shadows per brand spec */
+  --shadow: none;
 }
 
 /* ===== Reset ===== */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,14 +47,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 72px;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text);
-  background: var(--color-cream);
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--c-black);
+  background: var(--c-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,13 +74,11 @@ ul {
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
-  color: var(--color-dark);
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.15;
+  color: inherit;
 }
 
 button {
@@ -80,7 +87,7 @@ button {
   border: none;
 }
 
-/* ===== Layout utilities ===== */
+/* ===== Layout ===== */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -92,34 +99,45 @@ button {
   padding: 80px 0;
 }
 
+.section-dark {
+  background: var(--c-charcoal);
+  color: var(--c-white);
+}
+
+.section-grey {
+  background: var(--c-grey-bg);
+}
+
+/* Deprecated — keep for Contact section compatibility */
 .section-alt {
-  background: var(--color-cream-alt);
+  background: var(--c-grey-bg);
 }
 
 .section-header {
-  text-align: center;
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto 48px;
+  text-align: center;
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-orange);
-  margin-bottom: 12px;
+  color: var(--c-orange);
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   margin-bottom: 12px;
 }
 
 .section-subtitle {
-  color: var(--color-text-light);
-  font-size: 1.05rem;
+  color: var(--c-grey-text);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 /* ===== Buttons ===== */
@@ -128,60 +146,57 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-    color 0.2s ease;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-}
-
+/* Orange fill — primary action */
 .btn-primary {
-  background: var(--color-orange);
-  color: var(--color-white);
-  box-shadow: var(--shadow-orange);
+  background: var(--c-orange);
+  color: var(--c-black);
+  border: 2px solid var(--c-orange);
 }
-
 .btn-primary:hover {
-  background: var(--color-orange-dark);
+  background: var(--c-orange-hover);
+  border-color: var(--c-orange-hover);
 }
 
-/* Default outline — dark border, used on light backgrounds */
-.btn-outline {
-  background: transparent;
-  color: var(--color-dark);
-  border: 2px solid var(--color-dark);
-}
-
-.btn-outline:hover {
-  background: var(--color-dark);
-  color: var(--color-white);
-}
-
-/* Light outline — white border, used on dark backgrounds (hero) */
+/* Ghost — on dark backgrounds */
 .btn-outline-light {
   background: transparent;
-  color: var(--color-white);
-  border: 2px solid rgba(255, 255, 255, 0.55);
+  color: var(--c-white);
+  border: 2px solid rgba(255, 255, 255, 0.45);
 }
-
 .btn-outline-light:hover {
-  background: var(--color-white);
-  color: var(--color-dark);
+  border-color: var(--c-white);
+  color: var(--c-white);
 }
 
+/* Ghost — on light backgrounds */
+.btn-outline {
+  background: transparent;
+  color: var(--c-black);
+  border: 2px solid var(--c-grey-border);
+}
+.btn-outline:hover {
+  border-color: var(--c-black);
+}
+
+/* WhatsApp */
 .btn-whatsapp {
-  background: var(--color-whatsapp);
-  color: var(--color-white);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  background: #25D366;
+  color: var(--c-white);
+  border: 2px solid #25D366;
 }
-
 .btn-whatsapp:hover {
-  background: var(--color-whatsapp-dark);
+  background: #1EBE5D;
+  border-color: #1EBE5D;
 }
 
 @media (max-width: 768px) {

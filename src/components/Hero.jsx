@@ -18,7 +18,7 @@ function Hero() {
           <Link to="/products" className="btn btn-primary">
             View Products
           </Link>
-          <Link to="/#contact" className="btn btn-outline">
+          <Link to="/#contact" className="btn btn-outline-light">
             Contact Us
           </Link>
         </div>

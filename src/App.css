@@ -1,20 +1,18 @@
-/* Global app-level styles shared across sections */
-
 main {
   overflow-x: hidden;
 }
 
-/* Decorative African-inspired pattern strip used between sections */
+/* Decorative orange & black pattern strip used between sections */
 .pattern-strip {
   height: 10px;
   width: 100%;
   background: repeating-linear-gradient(
     45deg,
-    var(--color-rust) 0,
-    var(--color-rust) 10px,
-    var(--color-gold) 10px,
-    var(--color-gold) 20px,
-    var(--color-brown) 20px,
-    var(--color-brown) 30px
+    var(--color-orange) 0,
+    var(--color-orange) 10px,
+    var(--color-orange-light) 10px,
+    var(--color-orange-light) 20px,
+    #0d0d0d 20px,
+    #0d0d0d 30px
   );
 }

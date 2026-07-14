@@ -29,11 +29,8 @@
 
 .highlight-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(46, 26, 18, 0.14);
-}
-
-.highlight-icon {
-  font-size: 2rem;
+  box-shadow: 0 16px 36px rgba(232, 149, 10, 0.18);
+  border-color: rgba(232, 149, 10, 0.3);
 }
 
 .highlight-card h3 {

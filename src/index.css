@@ -1,25 +1,33 @@
 /* ===== Design tokens ===== */
 :root {
-  /* African-inspired earth tone palette on a white base */
-  --color-cream: #ffffff;
-  --color-cream-alt: #f7f1e8;
-  --color-rust: #c1440e;
-  --color-rust-dark: #9a350a;
-  --color-brown: #2e1a12;
-  --color-brown-soft: #4a3024;
-  --color-gold: #e3a857;
-  --color-text: #2e1a12;
-  --color-text-light: #6e5849;
+  /* Orange & black brand palette */
+  --color-cream: #fff8ee;        /* warm light background */
+  --color-cream-alt: #f0e8d8;    /* slightly deeper light bg for alt sections */
+  --color-orange: #e8950a;       /* primary orange (logo-matched) */
+  --color-orange-dark: #c47a04;  /* deeper orange for hover states */
+  --color-orange-light: #f5a623; /* brighter orange for accents/logo */
+  --color-dark: #0d0d0d;         /* near-black */
+  --color-dark-soft: #1a1a1a;    /* card bg on dark surfaces */
+  --color-text: #1a1a1a;
+  --color-text-light: #5c5c5c;
   --color-white: #ffffff;
   --color-whatsapp: #25d366;
   --color-whatsapp-dark: #1ebe5d;
+
+  /* Aliases — used by older component CSS via these names */
+  --color-rust: var(--color-orange);
+  --color-rust-dark: var(--color-orange-dark);
+  --color-brown: var(--color-dark);
+  --color-brown-soft: var(--color-dark-soft);
+  --color-gold: var(--color-orange-light);
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
 
   --max-width: 1180px;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(46, 26, 18, 0.1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-orange: 0 8px 20px rgba(232, 149, 10, 0.35);
 }
 
 /* ===== Reset ===== */
@@ -62,7 +70,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  color: var(--color-brown);
+  color: var(--color-dark);
   line-height: 1.2;
 }
 
@@ -100,7 +108,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-rust);
+  color: var(--color-orange);
   margin-bottom: 12px;
 }
 
@@ -133,24 +141,37 @@ button {
 }
 
 .btn-primary {
-  background: var(--color-rust);
+  background: var(--color-orange);
   color: var(--color-white);
-  box-shadow: 0 8px 20px rgba(193, 68, 14, 0.35);
+  box-shadow: var(--shadow-orange);
 }
 
 .btn-primary:hover {
-  background: var(--color-rust-dark);
+  background: var(--color-orange-dark);
 }
 
+/* Default outline — dark border, used on light backgrounds */
 .btn-outline {
   background: transparent;
-  color: var(--color-brown);
-  border: 2px solid var(--color-brown);
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
 }
 
 .btn-outline:hover {
-  background: var(--color-brown);
+  background: var(--color-dark);
   color: var(--color-white);
+}
+
+/* Light outline — white border, used on dark backgrounds (hero) */
+.btn-outline-light {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+}
+
+.btn-outline-light:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
 }
 
 .btn-whatsapp {
